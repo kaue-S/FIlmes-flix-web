@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Container from "@/components/ui/Container";
 export default function Familia ({seriesFamilia}){
     return (
         <>
@@ -13,7 +13,7 @@ export default function Familia ({seriesFamilia}){
          </Head>
          <h1>Séries de família</h1>
 
-        <div>
+        <Container>
             {seriesFamilia.map((serie) => (
                 <article key={serie.id}>
                    
@@ -27,7 +27,7 @@ export default function Familia ({seriesFamilia}){
                  <p>{serie.first_air_date}</p>
                 </article>     
             ))}
-        </div>  
+        </Container>  
         </>
     );
 }

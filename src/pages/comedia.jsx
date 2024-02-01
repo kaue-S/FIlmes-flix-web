@@ -14,7 +14,7 @@ export default function Comedia ({seriesComedia}){
          </Head>
          <h1>Séries de comédia</h1>
 
-        <div>
+        <Container>
             {seriesComedia.map((serie) => (
                 <article key={serie.id}>
                    
@@ -28,7 +28,7 @@ export default function Comedia ({seriesComedia}){
                  <p>{serie.first_air_date}</p>
                 </article>     
             ))}
-        </div>  
+        </Container>  
         </>
     );
 }

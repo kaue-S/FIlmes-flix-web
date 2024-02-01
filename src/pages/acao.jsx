@@ -14,7 +14,7 @@ export default function Acao ({seriesAcao}){
                 <meta name="keywords" content="Séries, Ação, Aventura, Séries de Ação, Séries de Aventura"/>
             </Head>
             <h1>Séries de Ação e aventura</h1>
-            <div>
+            <Container>
                 {seriesAcao.map((serie) => 
                     <article key={serie.id}>
                         {serie.poster_path && (
@@ -27,7 +27,7 @@ export default function Acao ({seriesAcao}){
                  <p>{serie.first_air_date}</p>
                     </article>
                 )}
-            </div>
+            </Container>
         </>
     );
 }
