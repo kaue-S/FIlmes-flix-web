@@ -8,6 +8,7 @@ export default function Cabecalho() {
       <div>
         
         <h1>
+          
           <Image
             src="/images/logotipo.png"
             width={100}
@@ -15,6 +16,7 @@ export default function Cabecalho() {
             alt="Televisão antiga"
           />
           Séries Flix
+        
         </h1>
         <Menu />
       </div>
