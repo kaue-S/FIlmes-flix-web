@@ -10,6 +10,13 @@ export default function Document() {
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Séries Flix" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <link
+          rel="shortcut icon"
+          href="/images/logotipo.png"
+          type="image/png"
+          sizes="256x256"
+        />
+        <meta name="author" content="Kauê Evangelista" />
       </Head>
      
       <body>
