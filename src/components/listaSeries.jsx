@@ -40,7 +40,6 @@ export default function ListaSeries({ series }) {
 const StyledListaSeries = styled.div`
 margin: 1rem;
 
-
 b{
   color: gray;
 }
