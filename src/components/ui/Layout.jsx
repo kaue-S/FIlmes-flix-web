@@ -1,5 +1,4 @@
 import Cabecalho from "./Cabecalho";
-
 export default function Layout({ children }) {
   return (
     <>
@@ -8,3 +7,6 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+
+

@@ -6,6 +6,7 @@ export default function Cabecalho() {
   return (
     <StyledHeader>
       <div>
+        
         <h1>
           <Image
             src="/images/logotipo.png"

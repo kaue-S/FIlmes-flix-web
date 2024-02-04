@@ -27,18 +27,18 @@ export default function Menu() {
 const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
   border: 2px solid;
   border-radius: 0 0 8px 8px;
-  margin: auto;
   background-color: black;
+  margin: auto;
+  max-width: 500px;
   
   a.ativo{
     background-color: #993399;
   }
 
   a {
-    padding: 0.8rem 1.4rem;
+    padding: 0.8rem;
     color: white;
     margin: 0;
     border-radius: 4px;
@@ -48,12 +48,6 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media screen and (min-width: 700px){
-    width: 35%;
-
-    a{
-      padding: 0.5rem 2rem;
-      font-size: 1.5rem;
-    }
+  
   }
 `;
