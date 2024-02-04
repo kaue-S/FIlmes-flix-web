@@ -6,7 +6,7 @@ export default function Acao({ seriesAcao }) {
   return (
     <>
       <Head>
-        <title>Séries de ação e aventura</title>
+        <title>Séries Flix - ação</title>
         <meta
           name="description"
           content="séries do gênero de ação e aventura"
@@ -16,7 +16,7 @@ export default function Acao({ seriesAcao }) {
           content="Séries, Ação, Aventura, Séries de Ação, Séries de Aventura"
         />
       </Head>
-      <h1>Séries de Ação e aventura</h1>
+      <h2>Séries de Ação</h2>
       <Container>
         <ListaSeries series={seriesAcao} />
       </Container>

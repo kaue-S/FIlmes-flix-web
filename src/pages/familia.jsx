@@ -5,11 +5,11 @@ export default function Familia({ seriesFamilia }) {
   return (
     <>
       <Head>
-        <title>Series de Família</title>
+        <title>Series Flix - Família</title>
         <meta name="description" content="Séries do gênero de família" />
         <meta name="keywords" content="Família, séries" />
       </Head>
-      <h1>Séries de família</h1>
+      <h2>Séries de família</h2>
 
       <Container>
         <ListaSeries series={seriesFamilia} />

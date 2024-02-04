@@ -6,11 +6,11 @@ export default function Comedia({ seriesComedia }) {
   return (
     <>
       <Head>
-        <title>Series de Comédia</title>
+        <title>Series Flix - Comédia</title>
         <meta name="description" content="Séries do gênero de comédia" />
         <meta name="keywords" content="Comédia, séries, séries engraçadas" />
       </Head>
-      <h1>Séries de comédia</h1>
+      <h2>Séries de comédia</h2>
 
       <Container>
         <ListaSeries series={seriesComedia} />

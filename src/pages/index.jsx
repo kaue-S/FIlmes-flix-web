@@ -6,12 +6,12 @@ export default function Home({ seriesPopulares }) {
   return (
     <>
       <Head>
-        <title>Séries Flix</title>
+        <title>Séries Flix - Populares</title>
         <meta name="description" content="Site com indicações de séries" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>As melhores Séries de TV você encontra aqui!</h1>
+      <h2>Mais populares</h2>
       <Container>
         <ListaSeries series={seriesPopulares} />
       </Container>
@@ -45,3 +45,5 @@ export async function getStaticProps() {
     };
   }
 }
+
+

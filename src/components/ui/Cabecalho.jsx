@@ -9,8 +9,8 @@ export default function Cabecalho() {
         <h1>
           <Image
             src="/images/logotipo.png"
-            width={250}
-            height={250}
+            width={100}
+            height={100}
             alt="Televisão antiga"
           />
           Séries Flix
@@ -31,7 +31,7 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 8rem;
+    font-size: 3rem;
     background-color: hsl(207.1, 91.18%, 13.33%);
   }
 `;
