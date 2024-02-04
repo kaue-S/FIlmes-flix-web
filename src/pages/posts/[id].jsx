@@ -1,5 +1,6 @@
 import ListaSeries from "@/components/listaSeries";
 import Head from "next/head";
+import styled from "styled-components";
 
 export async function getStaticProps({ params }) {
   const { id } = params;
@@ -45,7 +46,8 @@ export default function SeriePage({ serie }) {
         <meta name="description" content="Descrição da série" />
       </Head>
 
-      <div>
+      <StyledDiv>
+      <article>
         <h2>{serie.original_name}</h2>
         {serie.poster_path && (
           <img
@@ -53,16 +55,55 @@ export default function SeriePage({ serie }) {
             alt={`${serie.name} Poster`}
           />
         )}
-        <h3>{serie.genre_ids}</h3>
+
         <p>
           <strong>Lançamento: </strong>
-          {serie.first_air_date}
+          {new Date(serie.first_air_date).toLocaleString("pt-BR", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })}
+        </p><br />
+      </article> 
+        <p className="descricao">
+          <strong>Descrição: </strong><br /><br />
+          {serie.overview ? serie.overview : "Descrição não disponível."}
         </p>
-        <p>
-          <strong>Descrição: </strong>
-          {serie.overview}
-        </p>
-      </div>
+        
+      </StyledDiv>
     </>
   );
 }
+
+const StyledDiv = styled.div`
+text-align: center;
+margin: 1rem;
+padding: 1rem;
+box-shadow: 0px 3px 13px 0px gray;
+
+ .descricao{
+  padding: 1rem;
+  text-align: left;
+  
+ }
+
+ @media screen and (min-width: 700px){
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+
+  img{
+    width: 400px;
+  }
+
+  .descricao{
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  strong{
+    font-size: 1.7rem;
+  }
+
+ }
+`;
