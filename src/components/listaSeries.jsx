@@ -7,7 +7,7 @@ export default function ListaSeries({ series }) {
       {series.map((serie) => (
         <Link href={`/posts/${serie.id}`} key={serie.id}>
           <article>
-          {serie.poster_path ? (
+            {serie.poster_path ? (
               <img
                 src={`https://image.tmdb.org/t/p/w200${serie.poster_path}`}
                 alt={`${serie.name} Poster`}
@@ -17,7 +17,8 @@ export default function ListaSeries({ series }) {
             )}
 
             <div>
-             <strong>{serie.name}</strong><br />
+              <strong>{serie.name}</strong>
+              <br />
               <p className="lancamento">
                 {new Date(serie.first_air_date).toLocaleString("pt-BR", {
                   day: "2-digit",
@@ -26,11 +27,10 @@ export default function ListaSeries({ series }) {
                 })}
               </p>
               <p className="descricao">
-              {serie.overview ? serie.overview : "Descrição não disponível."}
+                {serie.overview ? serie.overview : "Descrição não disponível."}
               </p>
             </div>
           </article>
-          
         </Link>
       ))}
     </StyledListaSeries>
@@ -38,18 +38,18 @@ export default function ListaSeries({ series }) {
 }
 
 const StyledListaSeries = styled.div`
-margin: 1rem;
+  margin: 1rem;
 
-b{
-  color: gray;
-}
+  b {
+    color: gray;
+  }
 
-span{
-  text-align: center;
-  margin: auto;
-}
+  span {
+    text-align: center;
+    margin: auto;
+  }
 
-article{ 
+  article {
     display: flex;
     margin-bottom: 25px;
     height: 140px;
@@ -59,51 +59,48 @@ article{
     overflow: hidden;
     background-color: white;
   }
- 
-  article:hover{
+
+  article:hover {
     transform: scale(1.02);
   }
 
-  div{
+  div {
     margin: 10px;
   }
 
-  .lancamento{
-    color: #B6B6B6;
+  .lancamento {
+    color: #b6b6b6;
     margin-bottom: 10px;
   }
 
-.descricao{
-  white-space: wrap;
-  color: black;
-  margin: auto;
-
-}
-
- div strong{
-  color: black;
-  margin-bottom: 15px;
- }
-
- @media screen and (min-width: 770px) {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  article{
-    height: 300px;
-    width: 400px;
+  .descricao {
+    white-space: wrap;
+    color: black;
     margin: auto;
   }
 
-  .descricao{
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    margin-top: 15px;
+  div strong {
+    color: black;
+    margin-bottom: 15px;
   }
 
-}
- 
+  @media screen and (min-width: 770px) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    article {
+      height: 300px;
+      width: 400px;
+      margin: auto;
+    }
+
+    .descricao {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      margin-top: 15px;
+    }
+  }
 `;
