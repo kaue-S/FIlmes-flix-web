@@ -47,63 +47,63 @@ export default function SeriePage({ serie }) {
       </Head>
 
       <StyledDiv>
-      <article>
-        <h2>{serie.original_name}</h2>
-        {serie.poster_path && (
-          <img
-            src={`https://image.tmdb.org/t/p/w200${serie.poster_path}`}
-            alt={`${serie.name} Poster`}
-          />
-        )}
+        <article>
+          <h2>{serie.original_name}</h2>
+          {serie.poster_path && (
+            <img
+              src={`https://image.tmdb.org/t/p/w200${serie.poster_path}`}
+              alt={`${serie.name} Poster`}
+            />
+          )}
 
-        <p>
-          <strong>Lançamento: </strong>
-          {new Date(serie.first_air_date).toLocaleString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })}
-        </p><br />
-      </article> 
+          <p>
+            <strong>Lançamento: </strong>
+            {new Date(serie.first_air_date).toLocaleString("pt-BR", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })}
+          </p>
+          <br />
+        </article>
         <p className="descricao">
-          <strong>Descrição: </strong><br /><br />
+          <strong>Descrição: </strong>
+          <br />
+          <br />
           {serie.overview ? serie.overview : "Descrição não disponível."}
         </p>
-        
       </StyledDiv>
     </>
   );
 }
 
 const StyledDiv = styled.div`
-text-align: center;
-margin: 1rem;
-padding: 1rem;
-box-shadow: 0px 3px 13px 0px gray;
-
- .descricao{
+  text-align: center;
+  margin: 1rem;
   padding: 1rem;
-  text-align: left;
-  
- }
+  box-shadow: 0px 3px 13px 0px gray;
 
- @media screen and (min-width: 700px){
-  display: flex;
-  align-items: center;
-  margin: 2rem;
-
-  img{
-    width: 400px;
+  .descricao {
+    padding: 1rem;
+    text-align: left;
   }
 
-  .descricao{
-    width: 50%;
-    font-size: 1.5rem;
-  }
+  @media screen and (min-width: 700px) {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
 
-  strong{
-    font-size: 1.7rem;
-  }
+    img {
+      width: 400px;
+    }
 
- }
+    .descricao {
+      width: 50%;
+      font-size: 1.5rem;
+    }
+
+    strong {
+      font-size: 1.7rem;
+    }
+  }
 `;
