@@ -32,8 +32,8 @@ const StyledNav = styled.nav`
   background-color: black;
   margin: auto;
   max-width: 500px;
-  
-  a.ativo{
+
+  a.ativo {
     background-color: #993399;
   }
 
@@ -44,10 +44,7 @@ const StyledNav = styled.nav`
     border-radius: 4px;
 
     &:hover {
-      background-color: #993399; 
+      background-color: #993399;
     }
-  }
-
-  
   }
 `;
