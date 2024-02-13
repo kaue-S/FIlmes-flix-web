@@ -70,7 +70,6 @@ export default function filmePage({ filme }) {
           <strong>Descrição: </strong><br /><br />
           {filme.overview ? filme.overview : "Descrição não disponível."}
         </p>
-        
       </StyledDiv>
     </>
   );
