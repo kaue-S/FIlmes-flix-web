@@ -1,19 +1,19 @@
 import Head from "next/head";
 import Container from "@/components/ui/Container";
-import ListaSeries from "@/components/listaSeries";
+import ListaFilmes from "@/components/listaFilmes";
 
 export default function Comedia({ filmesComedia }) {
   return (
     <>
       <Head>
         <title>Series Flix - Comédia</title>
-        <meta name="description" content="Séries do gênero de comédia" />
-        <meta name="keywords" content="Comédia, séries, séries engraçadas" />
+        <meta name="description" content="Filmes do gênero de comédia" />
+        <meta name="keywords" content="Comédia, filmes, filmes engraçados" />
       </Head>
       <h2>Séries de comédia</h2>
 
       <Container>
-        <ListaSeries filmes={filmesComedia} />
+        <ListaFilmes filmes={filmesComedia} />
       </Container>
     </>
   );

@@ -1,4 +1,4 @@
-import ListaSeries from "@/components/listaSeries";
+import ListaSeries from "@/components/listaFilmes";
 import notaArredondada from "@/lib/funcoesUtilitarias";
 import Head from "next/head";
 import styled from "styled-components";

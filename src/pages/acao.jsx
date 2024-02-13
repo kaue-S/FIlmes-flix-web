@@ -1,24 +1,24 @@
 import Head from "next/head";
 import Container from "@/components/ui/Container";
-import ListaSeries from "@/components/listaSeries";
+import ListaFilmes from "@/components/listaFilmes";
 
 export default function Acao({ filmesAcao }) {
   return (
     <>
       <Head>
-        <title>Séries Flix - ação</title>
+        <title>Filmes Flix - ação</title>
         <meta
           name="description"
-          content="séries do gênero de ação e aventura"
+          content="Filmes do gênero de ação e aventura"
         />
         <meta
           name="keywords"
-          content="Séries, Ação, Aventura, Séries de Ação, Séries de Aventura"
+          content="Filmes, Ação, Aventura, Filmes de Ação, Filmes de Aventura, Filmes de fantasia"
         />
       </Head>
-      <h2>Séries de Ação</h2>
+      <h2>Filmes de Ação</h2>
       <Container>
-        <ListaSeries filmes={filmesAcao} />
+        <ListaFilmes filmes={filmesAcao} />
       </Container>
     </>
   );

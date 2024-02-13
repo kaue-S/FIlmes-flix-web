@@ -1,4 +1,4 @@
-import ListaSeries from "@/components/listaSeries";
+import ListaFilmes from "@/components/listaFilmes";
 import Container from "@/components/ui/Container";
 import Head from "next/head";
 
@@ -6,14 +6,14 @@ export default function Home({ filmesPopulares }) {
   return (
     <>
       <Head>
-        <title>Séries Flix - Populares</title>
-        <meta name="description" content="Site com indicações de séries" />
+        <title>Filmes Flix - Populares</title>
+        <meta name="description" content="Site com indicações de filmes" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h2>Mais populares</h2>
       <Container>
-        <ListaSeries filmes={filmesPopulares} />
+        <ListaFilmes filmes={filmesPopulares} />
       </Container>
     </>
   );

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Container from "@/components/ui/Container";
-import ListaSeries from "@/components/listaSeries";
+import ListaFilmes from "@/components/listaFilmes";
 export default function Familia({ filmesFamilia }) {
   return (
     <>
@@ -12,7 +12,7 @@ export default function Familia({ filmesFamilia }) {
       <h2>Filmes de família</h2>
 
       <Container>
-        <ListaSeries filmes={filmesFamilia} />
+        <ListaFilmes filmes={filmesFamilia} />
       </Container>
     </>
   );

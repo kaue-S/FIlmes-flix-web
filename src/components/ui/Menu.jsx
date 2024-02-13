@@ -26,25 +26,26 @@ export default function Menu() {
 
 const StyledNav = styled.nav`
   display: flex;
-  justify-content: space-between;
-  border: 2px solid;
-  border-radius: 0 0 8px 8px;
-  background-color: black;
-  margin: auto;
-  max-width: 500px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  gap: 5px;
 
+  a{ 
+    padding: 12px;
+    border-radius: 30px;
+    width: 40%;
+    text-align: center;
+    background-color: #373737;
+    color: white;
+  }
   a.ativo {
-    background-color: #993399;
+    background: linear-gradient(248deg, rgba(250,149,22,1) 15%, rgba(254,54,5,1) 100%);
   }
 
-  a {
-    padding: 0.8rem;
-    color: white;
-    margin: 0;
-    border-radius: 4px;
-
     &:hover {
-      background-color: #993399;
+      
     }
   }
 `;

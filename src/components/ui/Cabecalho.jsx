@@ -15,9 +15,11 @@ export default function Cabecalho() {
             height={100}
             alt="Televisão antiga"
           />
-          Séries Flix
+          Filmes Flix
         
-        </h1>
+        </h1><hr />
+
+        <h2>Categorias</h2>
         <Menu />
       </div>
     </StyledHeader>
@@ -25,9 +27,6 @@ export default function Cabecalho() {
 }
 
 const StyledHeader = styled.header`
-  div {
-    margin: none;
-  }
 
   h1 {
     color: white;
@@ -35,6 +34,14 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    background-color: hsl(207.1, 91.18%, 13.33%);
+  }
+
+  hr{
+    width: 80%;
+    margin: auto;
+  }
+
+  h2{
+    color: white;
   }
 `;
