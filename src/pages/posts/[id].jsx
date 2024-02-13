@@ -1,4 +1,5 @@
 import ListaSeries from "@/components/listaSeries";
+import notaArredondada from "@/lib/funcoesUtilitarias";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -8,7 +9,7 @@ export async function getStaticProps({ params }) {
   try {
     const apiKey = "701bae577a262e4406a9a09430d701ed";
     const resposta = await fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=pt-BR`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`
     );
 
     if (!resposta.ok) {
@@ -19,7 +20,7 @@ export async function getStaticProps({ params }) {
 
     return {
       props: {
-        serie: dados,
+        filme: dados,
       },
     };
   } catch (error) {
@@ -38,7 +39,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function SeriePage({ serie }) {
+export default function filmePage({ filme }) {
   return (
     <>
       <Head>
@@ -48,32 +49,33 @@ export default function SeriePage({ serie }) {
 
       <StyledDiv>
       <article>
-        <h2>{serie.original_name}</h2>
-        {serie.poster_path && (
+        <h2>{filme.title}</h2>
+        {filme.poster_path && (
           <img
-            src={`https://image.tmdb.org/t/p/w200${serie.poster_path}`}
-            alt={`${serie.name} Poster`}
+            src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
+            alt={`${filme.title} Poster`}
           />
         )}
 
         <p>
           <strong>Lançamento: </strong>
-          {new Date(serie.first_air_date).toLocaleString("pt-BR", {
-                  day: "2-digit",
-                  month: "2-digit",
+          {new Date(filme.release_date).toLocaleString("pt-BR", {
                   year: "numeric",
                 })}
         </p><br />
       </article> 
+      <p>{notaArredondada(filme.vote_average)}- </p>
+        <p> duração: {filme.runtime} min</p>
         <p className="descricao">
           <strong>Descrição: </strong><br /><br />
-          {serie.overview ? serie.overview : "Descrição não disponível."}
+          {filme.overview ? filme.overview : "Descrição não disponível."}
         </p>
         
       </StyledDiv>
     </>
   );
 }
+
 
 const StyledDiv = styled.div`
 text-align: center;

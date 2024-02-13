@@ -1,43 +1,44 @@
 import Link from "next/link";
 import styled from "styled-components";
+import notaArredondada from "@/lib/funcoesUtilitarias";
 
-export default function ListaSeries({ series }) {
+export default function ListaFilmes({ filmes }) {
   return (
-    <StyledListaSeries>
-      {series.map((serie) => (
-        <Link href={`/posts/${serie.id}`} key={serie.id}>
+    <StyledListaFilmes>
+      {filmes.map((filme) => (
+        <Link href={`/posts/${filme.id}`} key={filme.id}>
           <article>
-          {serie.poster_path ? (
+          {filme.poster_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/w200${serie.poster_path}`}
-                alt={`${serie.name} Poster`}
+                src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
+                alt={`${filme.name} Poster`}
               />
             ) : (
               <span>Imagem não disponível</span>
             )}
 
             <div>
-             <strong>{serie.name}</strong><br />
+             <strong>{filme.title}</strong><br />
               <p className="lancamento">
-                {new Date(serie.first_air_date).toLocaleString("pt-BR", {
-                  day: "2-digit",
+                {new Date(filme.release_date).toLocaleString("pt-BR", {
                   month: "2-digit",
                   year: "numeric",
                 })}
               </p>
+              <p>{notaArredondada(filme.vote_average)}</p>
               <p className="descricao">
-              {serie.overview ? serie.overview : "Descrição não disponível."}
+              {filme.overview ? filme.overview : "Descrição não disponível."}
               </p>
             </div>
           </article>
           
         </Link>
       ))}
-    </StyledListaSeries>
+    </StyledListaFilmes>
   );
 }
 
-const StyledListaSeries = styled.div`
+const StyledListaFilmes = styled.div`
 margin: 1rem;
 
 b{

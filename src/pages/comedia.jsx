@@ -2,7 +2,7 @@ import Head from "next/head";
 import Container from "@/components/ui/Container";
 import ListaSeries from "@/components/listaSeries";
 
-export default function Comedia({ seriesComedia }) {
+export default function Comedia({ filmesComedia }) {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ export default function Comedia({ seriesComedia }) {
       <h2>Séries de comédia</h2>
 
       <Container>
-        <ListaSeries series={seriesComedia} />
+        <ListaSeries filmes={filmesComedia} />
       </Container>
     </>
   );
@@ -25,7 +25,7 @@ export async function getStaticProps() {
 
   try {
     const resposta = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${generoIdComedia}&language=pt-BR`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${generoIdComedia}&language=pt-BR`
     );
 
     if (!resposta.ok) {
@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        seriesComedia: dados.results,
+        filmesComedia: dados.results,
       },
     };
   } catch (error) {

@@ -1,18 +1,18 @@
 import Head from "next/head";
 import Container from "@/components/ui/Container";
 import ListaSeries from "@/components/listaSeries";
-export default function Familia({ seriesFamilia }) {
+export default function Familia({ filmesFamilia }) {
   return (
     <>
       <Head>
-        <title>Series Flix - Família</title>
-        <meta name="description" content="Séries do gênero de família" />
-        <meta name="keywords" content="Família, séries" />
+        <title>Filmes Flix - Família</title>
+        <meta name="description" content="Filmes do gênero de família" />
+        <meta name="keywords" content="Família, Filmes" />
       </Head>
-      <h2>Séries de família</h2>
+      <h2>Filmes de família</h2>
 
       <Container>
-        <ListaSeries series={seriesFamilia} />
+        <ListaSeries filmes={filmesFamilia} />
       </Container>
     </>
   );
@@ -24,7 +24,7 @@ export async function getStaticProps() {
 
   try {
     const resposta = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${generoIdComedia}&language=pt-BR`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${generoIdComedia}&language=pt-BR`
     );
 
     if (!resposta.ok) {
@@ -35,7 +35,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        seriesFamilia: dados.results,
+        filmesFamilia: dados.results,
       },
     };
   } catch (error) {

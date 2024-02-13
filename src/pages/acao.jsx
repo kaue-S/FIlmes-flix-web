@@ -2,7 +2,7 @@ import Head from "next/head";
 import Container from "@/components/ui/Container";
 import ListaSeries from "@/components/listaSeries";
 
-export default function Acao({ seriesAcao }) {
+export default function Acao({ filmesAcao }) {
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ export default function Acao({ seriesAcao }) {
       </Head>
       <h2>Séries de Ação</h2>
       <Container>
-        <ListaSeries series={seriesAcao} />
+        <ListaSeries filmes={filmesAcao} />
       </Container>
     </>
   );
@@ -26,11 +26,11 @@ export default function Acao({ seriesAcao }) {
 
 export async function getStaticProps() {
   const apiKey = "701bae577a262e4406a9a09430d701ed";
-  const generoAcaoAventura = 10759;
+  const generoAcaoAventura = 28;
 
   try {
     const resposta = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${generoAcaoAventura}&language=pt-BR`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${generoAcaoAventura}&language=pt-BR`
     );
 
     if (!resposta.ok) {
@@ -41,7 +41,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        seriesAcao: dados.results,
+        filmesAcao: dados.results,
       },
     };
   } catch (error) {

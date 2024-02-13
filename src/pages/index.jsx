@@ -2,7 +2,7 @@ import ListaSeries from "@/components/listaSeries";
 import Container from "@/components/ui/Container";
 import Head from "next/head";
 
-export default function Home({ seriesPopulares }) {
+export default function Home({ filmesPopulares }) {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ export default function Home({ seriesPopulares }) {
       </Head>
       <h2>Mais populares</h2>
       <Container>
-        <ListaSeries series={seriesPopulares} />
+        <ListaSeries filmes={filmesPopulares} />
       </Container>
     </>
   );
@@ -24,18 +24,18 @@ export async function getStaticProps() {
 
   try {
     const resposta = await fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=pt-BR`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`
     );
 
     if (!resposta.ok) {
-      throw new Error("Falha ao obter dados da API TMDB");
+      throw new Error("Falha ao obter dados");
     }
 
     const dados = await resposta.json();
 
     return {
       props: {
-        seriesPopulares: dados.results,
+        filmesPopulares: dados.results,
       },
     };
   } catch (error) {
