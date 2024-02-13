@@ -41,6 +41,9 @@ export default function ListaFilmes({ filmes }) {
 const StyledListaFilmes = styled.div`
 margin: 1rem;
 
+h3{
+  color: white;
+}
 b{
   color: gray;
 }

@@ -34,6 +34,7 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: center;
     font-size: 3rem;
+    padding-right: 10px;
   }
 
   hr{
@@ -43,5 +44,7 @@ const StyledHeader = styled.header`
 
   h2{
     color: white;
+    margin-top: 50px;
+    font-size: 2.5rem;
   }
 `;

@@ -26,7 +26,7 @@ export default function Menu() {
 
 const StyledNav = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   font-size: 1.2rem;
   margin: 0 10px;
@@ -35,17 +35,21 @@ const StyledNav = styled.nav`
   a{ 
     padding: 12px;
     border-radius: 30px;
-    width: 40%;
+    width: 150px;
     text-align: center;
     background-color: #373737;
     color: white;
   }
+
   a.ativo {
     background: linear-gradient(248deg, rgba(250,149,22,1) 15%, rgba(254,54,5,1) 100%);
   }
 
-    &:hover {
-      
-    }
+  @media screen and (min-width: 640px){
+    flex-wrap: nowrap;
+    justify-content: center;
+     
+   
   }
+  
 `;
