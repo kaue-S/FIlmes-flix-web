@@ -10,7 +10,7 @@ export default function ListaFilmes({ filmes }) {
           <article>
           {filme.poster_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original${filme.poster_path}`}
                 alt={`${filme.name} Poster`}
               />
             ) : (

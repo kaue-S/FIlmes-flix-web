@@ -50,9 +50,9 @@ export default function filmePage({ filme }) {
       <StyledDiv>
       <article>
         <h2>{filme.title}</h2>
-        {filme.poster_path && (
+        {filme.backdrop_path && (
           <img
-            src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
             alt={`${filme.title} Poster`}
           />
         )}
@@ -70,6 +70,7 @@ export default function filmePage({ filme }) {
           <strong>Descrição: </strong><br /><br />
           {filme.overview ? filme.overview : "Descrição não disponível."}
         </p>
+        {console.log(filme)}
       </StyledDiv>
     </>
   );
@@ -88,13 +89,15 @@ box-shadow: 0px 3px 13px 0px gray;
   
  }
 
+ 
+
  @media screen and (min-width: 700px){
   display: flex;
   align-items: center;
   margin: 2rem;
 
   img{
-    width: 400px;
+    
   }
 
   .descricao{
