@@ -26,7 +26,7 @@ export default function Menu() {
 
 const StyledNav = styled.nav`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: 1.2rem;
   margin: 0 10px;

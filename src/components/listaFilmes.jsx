@@ -19,7 +19,7 @@ export default function ListaFilmes({ filmes }) {
 
              <strong>{filme.title}</strong><br />
               <div className="avaliacao">
-                <p className="lancamento">🗓
+                <p className="lancamento">
                   {" "+new Date(filme.release_date).toLocaleString("pt-BR", {
                     year: "numeric",
                   })}
@@ -38,21 +38,23 @@ export default function ListaFilmes({ filmes }) {
 const StyledListaFilmes = styled.div`
 margin: 1rem;
 display: flex;
-gap: 15px;
+gap: 20px;
 flex-wrap: wrap;
 justify-content: center;
 
 img{
   filter: brightness(50%);
   border-radius: 10px;
+  width: 230px;
 }
 
 article{
   position: relative;
+}
 
-  &: hover{
-    trasnform: scale(1.2);
-  }
+article:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 strong{
