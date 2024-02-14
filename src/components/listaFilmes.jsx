@@ -17,18 +17,15 @@ export default function ListaFilmes({ filmes }) {
               <span>Imagem não disponível</span>
             )}
 
-            <div>
              <strong>{filme.title}</strong><br />
               <div className="avaliacao">
-                <p className="lancamento">
-                  {new Date(filme.release_date).toLocaleString("pt-BR", {
-                    month: "2-digit",
+                <p className="lancamento">🗓
+                  {" "+new Date(filme.release_date).toLocaleString("pt-BR", {
                     year: "numeric",
                   })}
                 </p>
-                <p>{notaArredondada(filme.vote_average)}</p>
+                <p className="nota">⭐{notaArredondada(filme.vote_average)}</p>
               </div>
-            </div>
           </article>
           
           
@@ -42,27 +39,51 @@ const StyledListaFilmes = styled.div`
 margin: 1rem;
 display: flex;
 gap: 15px;
+flex-wrap: wrap;
+justify-content: center;
+
+img{
+  filter: brightness(50%);
+  border-radius: 10px;
+}
 
 article{
   position: relative;
+
+  &: hover{
+    trasnform: scale(1.2);
+  }
+}
+
+strong{
+ position: absolute;
+ left: 0;
+ left: 15px;
+ bottom: 35px;
+ color: white;
+}
+
+.avaliacao{
+  display: flex;
+  position: absolute;
+  bottom: 8px;
+  left: 15px;
+  color: #ffff;
+  font-weight: bold;
+}
+
+.nota{
+  position: absolute;
+  left: 130px;
 }
 
 div{
   background-color: transparent;
-  top: 0;
-  position: absolute;
-  border: 1px solid red;
-  width: 100%;
-  }
+}
 
   p, strong{
     background-color: transparent;
   }
 
-  .avaliacao{
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    top: 260px;
-  }
+  
 `;
