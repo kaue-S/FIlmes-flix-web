@@ -36,7 +36,7 @@ export default function ListaFilmes({ filmes }) {
 }
 
 const StyledListaFilmes = styled.div`
-margin: 1rem;
+margin: 10px;
 display: flex;
 gap: 20px;
 flex-wrap: wrap;
@@ -45,7 +45,7 @@ justify-content: center;
 img{
   filter: brightness(50%);
   border-radius: 10px;
-  width: 230px;
+  width: 165px;
 }
 
 article{
@@ -76,7 +76,7 @@ strong{
 
 .nota{
   position: absolute;
-  left: 130px;
+  left: 85px;
 }
 
 div{
@@ -87,5 +87,6 @@ div{
     background-color: transparent;
   }
 
+ 
   
 `;
