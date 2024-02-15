@@ -9,8 +9,6 @@ export default function Familia({ filmesFamilia }) {
         <meta name="description" content="Filmes do gênero de família" />
         <meta name="keywords" content="Família, Filmes" />
       </Head>
-      <h2>Filmes de família</h2>
-
       <Container>
         <ListaFilmes filmes={filmesFamilia} />
       </Container>

@@ -16,7 +16,6 @@ export default function Acao({ filmesAcao }) {
           content="Filmes, Ação, Aventura, Filmes de Ação, Filmes de Aventura, Filmes de fantasia"
         />
       </Head>
-      <h2>Filmes de Ação</h2>
       <Container>
         <ListaFilmes filmes={filmesAcao} />
       </Container>

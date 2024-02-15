@@ -1,6 +1,6 @@
-import ListaSeries from "@/components/listaFilmes";
 import notaArredondada from "@/lib/funcoesUtilitarias";
 import Head from "next/head";
+import Link from "next/link";
 import styled from "styled-components";
 
 export async function getStaticProps({ params }) {
@@ -48,70 +48,118 @@ export default function filmePage({ filme }) {
       </Head>
 
       <StyledDiv>
-      <article>
-        <h2>{filme.title}</h2>
-        {filme.backdrop_path && (
-          <img
-            src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
-            alt={`${filme.title} Poster`}
-          />
-        )}
+        <div className="botao-voltar">
+          <Link href="/">↩ Voltar</Link>
+        </div>
+        <article>
+          <div className="poster">
+            {filme.backdrop_path && (
+              <img
+                src={`https://image.tmdb.org/t/p/original${filme.backdrop_path}`}
+                alt={`${filme.title} Poster`}
+              />
+            )}
+          </div>
 
-        <p>
-          <strong>Lançamento: </strong>
-          {new Date(filme.release_date).toLocaleString("pt-BR", {
-                  year: "numeric",
-                })}
-        </p><br />
-      </article> 
-      <p>{notaArredondada(filme.vote_average)}- </p>
-        <p> duração: {filme.runtime} min</p>
-        <p className="descricao">
-          <strong>Descrição: </strong><br /><br />
-          {filme.overview ? filme.overview : "Descrição não disponível."}
-        </p>
-        {console.log(filme)}
+          {/* <p>
+            <strong>Lançamento: </strong>
+            {new Date(filme.release_date).toLocaleString("pt-BR", {
+              year: "numeric",
+            })}
+          </p> */}
+
+          <div className="informacoes">
+            <h3>{filme.title}</h3>
+            <div className="notaeduracao">
+              <p className="nota">
+                ⭐ {notaArredondada(filme.vote_average)}/10{" "}
+              </p>
+              <p> 🕐 {filme.runtime} min</p>
+            </div>
+            <div className="descricao">
+              <h4>Descrição:</h4>
+              <br />
+              <br />
+              <p>
+                {filme.overview ? filme.overview : "Descrição não disponível."}
+              </p>
+            </div>
+          </div>
+        </article>
       </StyledDiv>
     </>
   );
 }
 
-
 const StyledDiv = styled.div`
-text-align: center;
-margin: 1rem;
-padding: 1rem;
+  text-align: center;
+  color: white;
 
-.descricao{
-  padding: 1rem;
-  text-align: left;
- }
-
- article{
-  
- }
-
- img{
-  width: 100%;
- }
-
- @media screen and (min-width: 700px){
-  display: flex;
-  align-items: center;
-  margin: 2rem;
-
-  img{
-    
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 800;
   }
 
-  .descricao{
-    width: 50%;
+  .notaeduracao {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .nota {
+  }
+
+  .descricao {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .descricao h4 {
+    font-weight: bold;
     font-size: 1.5rem;
   }
 
-  strong{
-    font-size: 1.7rem;
+  article {
+    margin-top: 20px;
+    position: relative;
   }
 
- }
+  .informacoes {
+  }
+
+  .poster img {
+    filter: brightness(100%);
+    width: 100vw;
+  }
+  .botao-voltar {
+    text-align: start;
+  }
+
+  .botao-voltar a {
+    background: linear-gradient(
+      248deg,
+      rgba(250, 149, 22, 1) 15%,
+      rgba(254, 54, 5, 1) 100%
+    );
+    width: 10%;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+  }
+
+  @media screen and (min-width: 700px) {
+    align-items: center;
+
+    .descricao {
+      width: 50%;
+      font-size: 1.5rem;
+    }
+
+    strong {
+      font-size: 1.7rem;
+    }
+  }
 `;

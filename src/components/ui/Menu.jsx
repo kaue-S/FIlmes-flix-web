@@ -1,26 +1,35 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function Menu() {
   const rotaAtual = usePathname();
   const linkAtivo = (rota) => (rotaAtual === rota ? "ativo" : "");
 
+  const router = useRouter();
+  const hideMenu = router.pathname === "/posts/[id]";
+
   return (
-    <StyledNav>
-      <Link href="/" className={linkAtivo("/")}>
-        Populares
-      </Link>
-      <Link href="/acao" className={linkAtivo("/acao")}>
-        Ação
-      </Link>
-      <Link href="/comedia" className={linkAtivo("/comedia")}>
-        Comédia
-      </Link>
-      <Link href="/familia" className={linkAtivo("/familia")}>
-        Família
-      </Link>
-    </StyledNav>
+    <>
+      {!hideMenu && (
+        <StyledNav>
+          <Link href="/" className={linkAtivo("/")}>
+            Populares
+          </Link>
+          <Link href="/acao" className={linkAtivo("/acao")}>
+            Ação
+          </Link>
+          <Link href="/comedia" className={linkAtivo("/comedia")}>
+            Comédia
+          </Link>
+          <Link href="/familia" className={linkAtivo("/familia")}>
+            Família
+          </Link>
+        </StyledNav>
+      )}
+      ;
+    </>
   );
 }
 
@@ -32,9 +41,8 @@ const StyledNav = styled.nav`
   margin: 0 10px;
   gap: 5px;
   margin-top: 50px;
-  margin-bottom: 60px;
 
-  a{ 
+  a {
     padding: 12px;
     border-radius: 30px;
     width: 150px;
@@ -44,14 +52,15 @@ const StyledNav = styled.nav`
   }
 
   a.ativo {
-    background: linear-gradient(248deg, rgba(250,149,22,1) 15%, rgba(254,54,5,1) 100%);
+    background: linear-gradient(
+      248deg,
+      rgba(250, 149, 22, 1) 15%,
+      rgba(254, 54, 5, 1) 100%
+    );
   }
 
-  @media screen and (min-width: 640px){
+  @media screen and (min-width: 640px) {
     flex-wrap: nowrap;
     justify-content: center;
-     
-   
   }
-  
 `;

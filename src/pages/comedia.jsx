@@ -10,7 +10,6 @@ export default function Comedia({ filmesComedia }) {
         <meta name="description" content="Filmes do gênero de comédia" />
         <meta name="keywords" content="Comédia, filmes, filmes engraçados" />
       </Head>
-      <h2>Séries de comédia</h2>
 
       <Container>
         <ListaFilmes filmes={filmesComedia} />
