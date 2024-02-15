@@ -6,7 +6,6 @@ export default function Cabecalho() {
   return (
     <StyledHeader>
       <div>
-        
         <h1>
           
           <Image
@@ -18,8 +17,6 @@ export default function Cabecalho() {
           Filmes Flix
         
         </h1><hr />
-
-        <h2>Categorias</h2>
         <Menu />
       </div>
     </StyledHeader>

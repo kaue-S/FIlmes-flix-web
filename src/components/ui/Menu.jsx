@@ -31,6 +31,8 @@ const StyledNav = styled.nav`
   font-size: 1.2rem;
   margin: 0 10px;
   gap: 5px;
+  margin-top: 50px;
+  margin-bottom: 60px;
 
   a{ 
     padding: 12px;

@@ -10,7 +10,7 @@ export default function ListaFilmes({ filmes }) {
           <article>
           {filme.poster_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/original${filme.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w300${filme.poster_path}`}
                 alt={`${filme.name} Poster`}
               />
             ) : (
@@ -36,7 +36,6 @@ export default function ListaFilmes({ filmes }) {
 }
 
 const StyledListaFilmes = styled.div`
-margin: 10px;
 display: flex;
 gap: 20px;
 flex-wrap: wrap;
@@ -88,5 +87,9 @@ div{
   }
 
  
-  
+  @media screen and (min-width: 800px){
+    img{
+      width: 240px;
+    }
+  }
 `;

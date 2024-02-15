@@ -43,8 +43,8 @@ export default function filmePage({ filme }) {
   return (
     <>
       <Head>
-        <title>Series Flix</title>
-        <meta name="description" content="Descrição da série" />
+        <title>{filme.title}</title>
+        <meta name="description" content={filme.overview} />
       </Head>
 
       <StyledDiv>
@@ -81,15 +81,19 @@ const StyledDiv = styled.div`
 text-align: center;
 margin: 1rem;
 padding: 1rem;
-box-shadow: 0px 3px 13px 0px gray;
 
- .descricao{
+.descricao{
   padding: 1rem;
   text-align: left;
+ }
+
+ article{
   
  }
 
- 
+ img{
+  width: 100%;
+ }
 
  @media screen and (min-width: 700px){
   display: flex;

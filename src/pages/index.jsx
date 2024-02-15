@@ -11,7 +11,6 @@ export default function Home({ filmesPopulares }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>Mais populares</h2>
       <Container>
         <ListaFilmes filmes={filmesPopulares} />
       </Container>
