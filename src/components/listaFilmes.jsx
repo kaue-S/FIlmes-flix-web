@@ -39,7 +39,7 @@ const StyledListaFilmes = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 70px;
 
   img {
@@ -89,6 +89,8 @@ const StyledListaFilmes = styled.div`
   }
 
   @media screen and (min-width: 800px) {
+    margin-left: 15px;
+    margin-right: 15px;
     img {
       width: 240px;
     }
