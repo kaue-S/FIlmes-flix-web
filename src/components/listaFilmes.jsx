@@ -43,7 +43,8 @@ const StyledListaFilmes = styled.div`
   margin-top: 70px;
 
   img {
-    filter: brightness(65%);
+
+    /* filter: brightness(65%); */
     border-radius: 10px;
     width: 165px;
   }
@@ -58,11 +59,13 @@ const StyledListaFilmes = styled.div`
   }
 
   strong {
+   
     position: absolute;
     left: 0;
     left: 15px;
     bottom: 35px;
     color: white;
+    
   }
 
   .avaliacao {
