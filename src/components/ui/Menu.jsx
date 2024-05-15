@@ -13,6 +13,7 @@ export default function Menu() {
   return (
     <>
       {!hideMenu && (
+
         <StyledNav>
           <Link href="/" className={linkAtivo("/")}>
             Populares
@@ -27,6 +28,7 @@ export default function Menu() {
             Família
           </Link>
         </StyledNav>
+      
       )}
       ;
     </>
@@ -34,21 +36,30 @@ export default function Menu() {
 }
 
 const StyledNav = styled.nav`
+
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   font-size: 1.2rem;
   margin: 0 10px;
-  gap: 5px;
-  margin-top: 50px;
+  gap: 15px;
 
   a {
     padding: 12px;
-    border-radius: 30px;
+    border-radius: 10px;
     width: 150px;
     text-align: center;
     background-color: #373737;
     color: white;
+  }
+
+  a:hover{
+    background: linear-gradient(
+      248deg,
+      #dd943a 15%,
+      #e65835 100%
+    );
   }
 
   a.ativo {

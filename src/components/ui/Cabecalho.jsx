@@ -11,8 +11,8 @@ export default function Cabecalho() {
           <h1>
             <Image
               src="/images/logotipo.png"
-              width={100}
-              height={100}
+              width={50}
+              height={50}
               alt="Televisão antiga"
             />
             Filmes Flix
@@ -26,6 +26,15 @@ export default function Cabecalho() {
 }
 
 const StyledHeader = styled.header`
+
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid white;
+    padding: 15px 0;
+  }
+
   h1 {
     color: white;
     display: flex;
@@ -33,11 +42,7 @@ const StyledHeader = styled.header`
     justify-content: center;
     font-size: 2.5rem;
     padding-right: 10px;
-  }
-
-  hr {
-    width: 80%;
-    margin: auto;
+    border: 2px solid red;
   }
 
   h2 {
