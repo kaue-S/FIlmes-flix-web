@@ -9,24 +9,29 @@ export default function ListaFilmes({ filmes }) {
         <Link href={`/posts/${filme.id}`} key={filme.id}>
           <article>
             {filme.poster_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/w300${filme.poster_path}`}
-                alt={`${filme.name} Poster`}
-              />
+              <div className="imagem-box">
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${filme.poster_path}`}
+                  alt={`${filme.name} Poster`}
+                />
+
+              </div>
             ) : (
               <span>Imagem não disponível</span>
             )}
+            <div className="infos">
+              <strong>{filme.title}</strong>
+              <br />
+              <div className="avaliacao">
+                <p className="lancamento">
+                  {" " +
+                    new Date(filme.release_date).toLocaleString("pt-BR", {
+                      year: "numeric",
+                    })}
+                </p>
+                <p className="nota">⭐{notaArredondada(filme.vote_average)}</p>
+              </div>
 
-            <strong>{filme.title}</strong>
-            <br />
-            <div className="avaliacao">
-              <p className="lancamento">
-                {" " +
-                  new Date(filme.release_date).toLocaleString("pt-BR", {
-                    year: "numeric",
-                  })}
-              </p>
-              <p className="nota">⭐{notaArredondada(filme.vote_average)}</p>
             </div>
           </article>
         </Link>
@@ -42,11 +47,32 @@ const StyledListaFilmes = styled.div`
   justify-content: space-around;
   margin-top: 70px;
 
-  img {
+  .imagem-box{
+    /* border: 1px solid white; */
+    
+  }
 
-    /* filter: brightness(65%); */
+   .imagem-box::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    border-radius: 10px;
+  }
+
+  img {
     border-radius: 10px;
     width: 165px;
+  }
+
+  .infos{
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
   }
 
   article {
@@ -63,7 +89,7 @@ const StyledListaFilmes = styled.div`
     position: absolute;
     left: 0;
     left: 15px;
-    bottom: 35px;
+    bottom: 50px;
     color: white;
     
   }
